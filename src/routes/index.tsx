@@ -298,45 +298,28 @@ function achievementDate(a: Achievement) {
   return `${day ? `${day} ` : ""}${label} ${a.year}`;
 }
 
-const STUDY_YEARS = ["1st Year", "2nd Year", "3rd Year"] as const;
-// Current Cluster 4 sections (CSE-10/11/12) are in 3rd year; records below are theirs.
-function achievementStudyYear(_a: Achievement) {
-  return "3rd Year";
-}
-
 function AchievementYears() {
-  const [year, setYear] = useState<string>("3rd Year");
-  const list = achievementsByDate.filter((a) => achievementStudyYear(a) === year);
   return (
-    <>
-      <div role="tablist" aria-label="Choose year" className="mt-10 flex flex-wrap gap-3">
-        {STUDY_YEARS.map((y) => (
-          <button key={y} role="tab" aria-selected={y === year} onClick={() => setYear(y)}
-            className={`rounded-full border px-6 py-2 text-sm font-semibold transition-colors ${y === year ? "border-gold bg-gold text-gold-foreground" : "border-gold/40 text-primary-foreground hover:border-gold"}`}>
-            {y}
-          </button>
-        ))}
-      </div>
-      {list.length ? (
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {list.map((a) => (
-            <article key={a.title} className="flex flex-col rounded-2xl border border-gold/30 bg-primary-foreground/5 p-4 text-center transition-colors hover:border-gold">
-              {a.images?.length ? (
-                <img src={a.images[0]} alt={a.imageCaption ?? a.title} loading="lazy" className="aspect-[4/3] w-full rounded-xl bg-primary-foreground/5 object-cover object-top" />
-              ) : (
-                <div className="flex aspect-[4/3] w-full items-center justify-center rounded-xl bg-primary-foreground/5 text-gold"><Trophy className="size-12" aria-hidden="true" /></div>
-              )}
-              <p className="mt-4 text-xs font-semibold text-gold">{achievementDate(a)}</p>
-              <h3 className="mt-1 font-display text-base font-bold leading-snug text-primary-foreground">{a.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-primary-foreground/70">{achievementSummaries[a.title] ?? a.detail}</p>
-              {a.winners && <p className="mt-3 text-xs font-medium text-gold">{a.winners.join(", ")}</p>}
-            </article>
-          ))}
-        </div>
-      ) : (
-        <p className="mt-10 rounded-xl border border-gold/25 p-8 text-center text-primary-foreground/70">No achievements added for {year} yet.</p>
-      )}
-    </>
+    <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      {achievementsByDate.map((a) => (
+        <article key={a.title} className="flex flex-col rounded-2xl border border-gold/30 bg-primary-foreground/5 p-4 text-center transition-colors hover:border-gold">
+          {a.images?.length ? (
+            <img
+              src={a.images[0]}
+              alt={a.imageCaption ?? a.title}
+              referrerPolicy="no-referrer"
+              className="aspect-[4/3] w-full rounded-xl bg-primary-foreground/5 object-cover object-top"
+            />
+          ) : (
+            <div className="flex aspect-[4/3] w-full items-center justify-center rounded-xl bg-primary-foreground/5 text-gold"><Trophy className="size-12" aria-hidden="true" /></div>
+          )}
+          <p className="mt-4 text-xs font-semibold text-gold">{achievementDate(a)}</p>
+          <h3 className="mt-1 font-display text-base font-bold leading-snug text-primary-foreground">{a.title}</h3>
+          <p className="mt-2 text-sm leading-relaxed text-primary-foreground/70">{achievementSummaries[a.title] ?? a.detail}</p>
+          {a.winners && <p className="mt-3 text-xs font-medium text-gold">{a.winners.join(", ")}</p>}
+        </article>
+      ))}
+    </div>
   );
 }
 
@@ -452,14 +435,14 @@ function FacultyModal({ f, onClose }: { f: FacultyMember; onClose: () => void })
   const shown = groups.filter(([, v]) => v && v.length);
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-brand-deep/70 p-4"
+      className="fixed inset-0 z-[80] flex items-center justify-center bg-brand-deep/70 p-4"
       onClick={onClose}
       role="dialog"
       aria-modal="true"
       aria-label={f.name}
     >
       <div
-        className="relative max-h-[90vh] w-full max-w-3xl overflow-y-auto bg-card p-6 shadow-2xl sm:p-8"
+        className="relative max-h-[90vh] w-full max-w-3xl overflow-y-auto overscroll-contain bg-card p-6 shadow-2xl sm:p-8"
         onClick={(e) => e.stopPropagation()}
       >
         <button
@@ -525,14 +508,14 @@ function TimetableModal({ timetable, onClose }: { timetable: SectionTimetable; o
   const times = timetable.periodTimes ?? periodTimes;
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-brand-deep/75 p-3 sm:p-5"
+      className="fixed inset-0 z-[80] flex items-center justify-center bg-brand-deep/75 p-3 sm:p-5"
       onClick={onClose}
       role="dialog"
       aria-modal="true"
       aria-label={`${timetable.section} timetable`}
     >
       <div
-        className="relative max-h-[92vh] w-full max-w-6xl overflow-y-auto bg-card p-5 shadow-2xl sm:p-8"
+        className="relative max-h-[92vh] w-full max-w-6xl overflow-y-auto overscroll-contain bg-card p-5 shadow-2xl sm:p-8"
         onClick={(event) => event.stopPropagation()}
       >
         <Button
@@ -616,6 +599,24 @@ function Index() {
   const [openSection, setOpenSection] = useState<string | null>(null);
   const [sectionYear, setSectionYear] = useState(3);
   const [openTimetable, setOpenTimetable] = useState<SectionTimetable | null>(null);
+  const hasModal = Boolean(openFaculty || openSection || openTimetable);
+  useEffect(() => {
+    if (!hasModal) return;
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setOpenFaculty(null);
+        setOpenSection(null);
+        setOpenTimetable(null);
+      }
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.body.style.overflow = prevOverflow;
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [hasModal]);
   return (
     <div id="top" className="min-h-screen bg-background">
       <CinematicScrollChrome />
@@ -729,7 +730,6 @@ function Index() {
             </li>
           ))}
         </ol>
-        {openFaculty && <FacultyModal f={openFaculty} onClose={() => setOpenFaculty(null)} />}
       </section>
 
       {/* Research and consultancy */}
@@ -920,80 +920,6 @@ function Index() {
           </div>
           )}
         </div>
-        {openSection && (() => {
-          const yr = openSection.startsWith("Y1:") ? 1 : openSection.startsWith("Y2:") ? 2 : 3;
-          const isY1 = yr !== 3;
-          const code = isY1 ? openSection.slice(3) : openSection;
-          const roster = (yr === 1 ? firstYearRosters[code] : yr === 2 ? secondYearRosters[code] : sectionRosters[code]) ?? [];
-          if (!roster.length) return null;
-          return (
-          <div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-brand-deep/70 p-4"
-            onClick={() => setOpenSection(null)}
-            role="dialog"
-            aria-modal="true"
-            aria-label={`${code} students`}
-          >
-            <div
-              className="relative max-h-[90vh] w-full max-w-2xl overflow-y-auto bg-card p-6 shadow-2xl sm:p-8"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <button
-                type="button"
-                onClick={() => setOpenSection(null)}
-                aria-label="Close"
-                className="absolute right-4 top-3 text-2xl font-bold text-muted-foreground hover:text-primary"
-              >
-                ×
-              </button>
-              <h3 className="font-display text-3xl font-extrabold text-gold">{code}{isY1 ? ` · ${yr === 1 ? "1st" : "2nd"} Year` : ""}</h3>
-              <p className="mt-1 text-sm text-foreground/70">{roster.length} students</p>
-              <div className="mt-6 overflow-x-auto">
-              <table className="w-full min-w-[36rem] text-sm">
-                <thead>
-                  <tr className="border-b border-border text-left text-[11px] uppercase tracking-wider text-muted-foreground">
-                    <th className="py-2 pr-3">#</th>
-                    <th className="py-2 pr-3">Name</th>
-                    <th className="py-2 pr-3">USN</th>
-                    <th className="py-2">Proctor</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {roster.map((st, i) => {
-                    const proctor = st.proctor ? { name: st.proctor } : isY1 ? null : getProctor(code, st.usn);
-                    return (
-                      <tr key={`${st.usn}-${i}`} className="border-b border-border/60">
-                        <td className="py-2 pr-3 font-display font-bold text-gold">{i + 1}</td>
-                        <td className="py-2 pr-3 text-foreground">
-                          <span className="inline-flex items-center gap-2">
-                            {st.name}
-                            {st.linkedin && (
-                              <a
-                                href={st.linkedin}
-                                target="_blank"
-                                rel="noreferrer"
-                                aria-label={`Open ${st.name}'s LinkedIn profile`}
-                                title="Open LinkedIn profile"
-                                className="inline-flex size-7 shrink-0 items-center justify-center text-primary transition-colors hover:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                              >
-                                <Linkedin className="size-4" aria-hidden="true" />
-                              </a>
-                            )}
-                          </span>
-                        </td>
-                        <td className="py-2 pr-3 font-mono text-xs text-foreground/70">{st.usn}</td>
-                        <td className="py-2 text-foreground/80">{proctor ? proctor.name : "—"}</td>
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </table>
-              </div>
-            </div>
-          </div>
-          );
-        })()}
-        {openTimetable && <TimetableModal timetable={openTimetable} onClose={() => setOpenTimetable(null)} />}
       </section>
 
       {/* Events */}
@@ -1108,6 +1034,82 @@ function Index() {
           Maintained by the students of Cluster 4 · © {new Date().getFullYear()}
         </p>
       </footer>
+
+      {openFaculty && <FacultyModal f={openFaculty} onClose={() => setOpenFaculty(null)} />}
+      {openSection && (() => {
+        const yr = openSection.startsWith("Y1:") ? 1 : openSection.startsWith("Y2:") ? 2 : 3;
+        const isY1 = yr !== 3;
+        const code = isY1 ? openSection.slice(3) : openSection;
+        const roster = (yr === 1 ? firstYearRosters[code] : yr === 2 ? secondYearRosters[code] : sectionRosters[code]) ?? [];
+        if (!roster.length) return null;
+        return (
+          <div
+            className="fixed inset-0 z-[80] flex items-center justify-center bg-brand-deep/70 p-4"
+            onClick={() => setOpenSection(null)}
+            role="dialog"
+            aria-modal="true"
+            aria-label={`${code} students`}
+          >
+            <div
+              className="relative max-h-[90vh] w-full max-w-2xl overflow-y-auto overscroll-contain bg-card p-6 shadow-2xl sm:p-8"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                type="button"
+                onClick={() => setOpenSection(null)}
+                aria-label="Close"
+                className="absolute right-4 top-3 text-2xl font-bold text-muted-foreground hover:text-primary"
+              >
+                ×
+              </button>
+              <h3 className="font-display text-3xl font-extrabold text-gold">{code}{isY1 ? ` · ${yr === 1 ? "1st" : "2nd"} Year` : ""}</h3>
+              <p className="mt-1 text-sm text-foreground/70">{roster.length} students</p>
+              <div className="mt-6 overflow-x-auto">
+              <table className="w-full min-w-[36rem] text-sm">
+                <thead>
+                  <tr className="border-b border-border text-left text-[11px] uppercase tracking-wider text-muted-foreground">
+                    <th className="py-2 pr-3">#</th>
+                    <th className="py-2 pr-3">Name</th>
+                    <th className="py-2 pr-3">USN</th>
+                    <th className="py-2">Proctor</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {roster.map((st, i) => {
+                    const proctor = st.proctor ? { name: st.proctor } : isY1 ? null : getProctor(code, st.usn);
+                    return (
+                      <tr key={`${st.usn}-${i}`} className="border-b border-border/60">
+                        <td className="py-2 pr-3 font-display font-bold text-gold">{i + 1}</td>
+                        <td className="py-2 pr-3 text-foreground">
+                          <span className="inline-flex items-center gap-2">
+                            {st.name}
+                            {st.linkedin && (
+                              <a
+                                href={st.linkedin}
+                                target="_blank"
+                                rel="noreferrer"
+                                aria-label={`Open ${st.name}'s LinkedIn profile`}
+                                title="Open LinkedIn profile"
+                                className="inline-flex size-7 shrink-0 items-center justify-center text-primary transition-colors hover:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                              >
+                                <Linkedin className="size-4" aria-hidden="true" />
+                              </a>
+                            )}
+                          </span>
+                        </td>
+                        <td className="py-2 pr-3 font-mono text-xs text-foreground/70">{st.usn}</td>
+                        <td className="py-2 text-foreground/80">{proctor ? proctor.name : "—"}</td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+              </div>
+            </div>
+          </div>
+        );
+      })()}
+      {openTimetable && <TimetableModal timetable={openTimetable} onClose={() => setOpenTimetable(null)} />}
     </div>
   );
 }

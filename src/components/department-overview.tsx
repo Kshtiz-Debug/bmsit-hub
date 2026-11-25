@@ -14,7 +14,7 @@ export function DepartmentOverview() {
     <section id="overview" data-chapter="00" className="cinematic-section mx-auto max-w-7xl space-y-16 px-4 py-24 lg:py-32">
       <div>
         <Heading>Course Overview</Heading>
-        <p className="mt-6 max-w-5xl text-lg leading-relaxed text-foreground/80">{courseOverview}</p>
+        <p className="mt-6 text-lg leading-relaxed text-foreground/80">{courseOverview}</p>
       </div>
 
       <div className="rounded-2xl bg-primary p-8 text-primary-foreground sm:p-12">

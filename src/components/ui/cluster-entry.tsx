@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { ArrowDownRight } from "lucide-react";
 import { useRef } from "react";
@@ -8,13 +9,18 @@ type ClusterEntryProps = {
   logo: string;
 };
 
-const entryNav = [
+type NavItem =
+  | { label: string; href: string; to?: never }
+  | { label: string; to: "/advaya"; href?: never };
+
+const entryNav: NavItem[] = [
   { label: "Overview", href: "#overview" },
   { label: "Faculty", href: "#faculty" },
   { label: "Research", href: "#research" },
   { label: "Achievements", href: "#achievements" },
   { label: "Sections", href: "#sections" },
   { label: "Events", href: "#events" },
+  { label: "ADVAYA", to: "/advaya" },
 ];
 
 function WordsPullUp({ text }: { text: string }) {
@@ -72,17 +78,31 @@ export function ClusterEntry({ background, logo }: ClusterEntryProps) {
         <nav aria-label="Main navigation" className="hidden bg-brand-deep/95 px-6 py-4 shadow-lg backdrop-blur-sm md:block">
           <ul className="flex items-center gap-7">
             {entryNav.map((item) => (
-              <li key={item.href}>
-                <a className="text-xs font-semibold uppercase text-primary-foreground/75 transition-colors hover:text-gold" href={item.href}>
-                  {item.label}
-                </a>
+              <li key={item.label}>
+                {item.to ? (
+                  <Link className="text-xs font-semibold uppercase text-gold transition-colors hover:text-primary-foreground" to={item.to}>
+                    {item.label}
+                  </Link>
+                ) : (
+                  <a className="text-xs font-semibold uppercase text-primary-foreground/75 transition-colors hover:text-gold" href={item.href}>
+                    {item.label}
+                  </a>
+                )}
               </li>
             ))}
           </ul>
         </nav>
-        <div className="bg-brand-deep/95 px-4 py-3 text-right text-primary-foreground shadow-lg backdrop-blur-sm">
-          <p className="font-display text-sm font-bold sm:text-base">CSE · Cluster 4</p>
-          <p className="mt-0.5 text-[9px] font-semibold uppercase text-gold sm:text-[10px]">BMSIT&amp;M</p>
+        <div className="flex items-center gap-2">
+          <Link
+            to="/advaya"
+            className="bg-brand-deep/95 px-3 py-3 text-xs font-bold uppercase text-gold shadow-lg backdrop-blur-sm md:hidden"
+          >
+            ADVAYA
+          </Link>
+          <div className="bg-brand-deep/95 px-4 py-3 text-right text-primary-foreground shadow-lg backdrop-blur-sm">
+            <p className="font-display text-sm font-bold sm:text-base">CSE · Cluster 4</p>
+            <p className="mt-0.5 text-[9px] font-semibold uppercase text-gold sm:text-[10px]">BMSIT&amp;M</p>
+          </div>
         </div>
       </div>
 
