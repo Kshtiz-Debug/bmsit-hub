@@ -1,0 +1,361 @@
+[
+  {
+    "usn": "1BY25CS004",
+    "name": "Mr. Aakash Bhagat",
+    "proctor": "Prof. Syed Matheen Pasha"
+  },
+  {
+    "usn": "1BY25CS041",
+    "name": "Mr. Anant Mavi",
+    "proctor": "Prof. Yoga Durgadevi Goli",
+    "linkedin": "https://www.linkedin.com/in/anant-mavi-809981384"
+  },
+  {
+    "usn": "1BY25CS055",
+    "name": "Mr. Archit Sharma",
+    "proctor": "Prof. Yoga Durgadevi Goli",
+    "linkedin": "https://www.linkedin.com/in/archit-sharma-381998383"
+  },
+  {
+    "usn": "1BY25CS111",
+    "name": "Mr. Gaurav Ranjan",
+    "proctor": "Prof. Yoga Durgadevi Goli",
+    "linkedin": "https://www.linkedin.com/in/gaurav-ranjan-6b963936a"
+  },
+  {
+    "usn": "1BY25CS120",
+    "name": "Ms. Harini G",
+    "proctor": "Prof. Yoga Durgadevi Goli"
+  },
+  {
+    "usn": "1BY25CS135",
+    "name": "Mr. Jallella Mani Shobith",
+    "proctor": "Dr. Suhas A Bhyratae"
+  },
+  {
+    "usn": "1BY25CS142",
+    "name": "Ms. Kari Varshitha",
+    "proctor": "Dr. Suhas A Bhyratae"
+  },
+  {
+    "usn": "1BY25CS145",
+    "name": "Mr. Kaushik Raj Giri",
+    "proctor": "Dr. Suhas A Bhyratae"
+  },
+  {
+    "usn": "1BY25CS149",
+    "name": "Mr. Khagendra Prasad Yadav",
+    "proctor": "Dr. Suhas A Bhyratae"
+  },
+  {
+    "usn": "1BY25CS171",
+    "name": "Mr. Manish Kumar Gupta Rouniyar",
+    "proctor": "Dr. Suhas A Bhyratae"
+  },
+  {
+    "usn": "1BY25CS179",
+    "name": "Mr. Md Tanzeem Rashid",
+    "proctor": "Prof. Yoga Durgadevi Goli"
+  },
+  {
+    "usn": "1BY25CS181",
+    "name": "Ms. Mekala Chatura Reddy",
+    "proctor": "Dr. Suhas A Bhyratae"
+  },
+  {
+    "usn": "1BY25CS191",
+    "name": "Mr. Mohit Yadav",
+    "proctor": "Dr. Suhas A Bhyratae",
+    "linkedin": "https://www.linkedin.com/in/mohit-yadav-966b20291"
+  },
+  {
+    "usn": "1BY25CS236",
+    "name": "Mr. Purshottam Kumar",
+    "proctor": "Dr. Suhas A Bhyratae"
+  },
+  {
+    "usn": "1BY25CS247",
+    "name": "Mr. Ranjan Prasad Kalawar",
+    "proctor": "Prof. Syed Matheen Pasha"
+  },
+  {
+    "usn": "1BY25CS254",
+    "name": "Mr. Rudra Abhishek",
+    "proctor": "Dr. Suhas A Bhyratae"
+  },
+  {
+    "usn": "1BY25CS262",
+    "name": "Mr. Saksham Pathak",
+    "proctor": "Dr. Suhas A Bhyratae",
+    "linkedin": "https://www.linkedin.com/in/saksham-pathak-linked"
+  },
+  {
+    "usn": "1BY25CS267",
+    "name": "Mr. Satish Kumar Rajak",
+    "proctor": "Prof. Syed Matheen Pasha"
+  },
+  {
+    "usn": "1BY25CS271",
+    "name": "Ms. Shambhavi Singh",
+    "proctor": "Prof. Syed Matheen Pasha"
+  },
+  {
+    "usn": "1BY25CS273",
+    "name": "Mr. Shashwat Patil",
+    "proctor": "Prof. Syed Matheen Pasha",
+    "linkedin": "https://www.linkedin.com/in/shashwat-patil-791190382"
+  },
+  {
+    "usn": "1BY25CS278",
+    "name": "Mr. Shubham Yadav",
+    "proctor": "Prof. Syed Matheen Pasha"
+  },
+  {
+    "usn": "1BY25CS299",
+    "name": "Mr. Sumit Kumar Singh",
+    "proctor": "Prof. Syed Matheen Pasha"
+  },
+  {
+    "usn": "1BY25CS316",
+    "name": "Ms. Unnati Kumari",
+    "proctor": "Prof. Syed Matheen Pasha"
+  },
+  {
+    "usn": "1TD25CS013",
+    "name": "Mr. Aditya A Naik",
+    "proctor": "Prof. Yoga Durgadevi Goli"
+  },
+  {
+    "usn": "1TD25CS020",
+    "name": "Ms. Aishwarya C S",
+    "proctor": "Prof. Yoga Durgadevi Goli"
+  },
+  {
+    "usn": "1TD25CS042",
+    "name": "Ms. Anya Saini",
+    "proctor": "Prof. Yoga Durgadevi Goli"
+  },
+  {
+    "usn": "1TD25CS056",
+    "name": "Ms. Bhagyashree Shivanand Bagali",
+    "proctor": "Prof. Syed Matheen Pasha"
+  },
+  {
+    "usn": "1TD25CS082",
+    "name": "Mr. Darshan Kalmesh Jinnappanavar",
+    "proctor": "Prof. Yoga Durgadevi Goli"
+  },
+  {
+    "usn": "1TD25CS090",
+    "name": "Ms. Dhanyashree K P",
+    "proctor": "Prof. Yoga Durgadevi Goli"
+  },
+  {
+    "usn": "1TD25CS104",
+    "name": "Ms. Gagana Nagaraj",
+    "proctor": "Prof. Yoga Durgadevi Goli"
+  },
+  {
+    "usn": "1TD25CS111",
+    "name": "Ms. Gunjan Kumari",
+    "proctor": "Prof. Yoga Durgadevi Goli"
+  },
+  {
+    "usn": "1TD25CS116",
+    "name": "Mr. Harsha K Raj",
+    "proctor": "Prof. Yoga Durgadevi Goli"
+  },
+  {
+    "usn": "1TD25CS118",
+    "name": "Mr. Harshal B H",
+    "proctor": "Prof. Yoga Durgadevi Goli"
+  },
+  {
+    "usn": "1TD25CS123",
+    "name": "Ms. Himasuma M",
+    "proctor": "Prof. Yoga Durgadevi Goli"
+  },
+  {
+    "usn": "1TD25CS134",
+    "name": "Mr. K P Vikas",
+    "proctor": "Prof. Syed Matheen Pasha"
+  },
+  {
+    "usn": "1TD25CS171",
+    "name": "Mr. Mudit Mridul",
+    "proctor": "Dr. Suhas A Bhyratae"
+  },
+  {
+    "usn": "1TD25CS190",
+    "name": "Mr. Nitish R Dodamani",
+    "proctor": "Dr. Suhas A Bhyratae"
+  },
+  {
+    "usn": "1TD25CS193",
+    "name": "Mr. Omkar Aradhya D",
+    "proctor": "Dr. Suhas A Bhyratae"
+  },
+  {
+    "usn": "1TD25CS196",
+    "name": "Mr. Padala Gunardhava Shiva Krishna",
+    "proctor": "Dr. Suhas A Bhyratae"
+  },
+  {
+    "usn": "1TD25CS217",
+    "name": "Ms. Prerna S A",
+    "proctor": "Dr. Suhas A Bhyratae"
+  },
+  {
+    "usn": "1TD25CS229",
+    "name": "Mr. Raghav D",
+    "proctor": "Dr. Suhas A Bhyratae"
+  },
+  {
+    "usn": "1TD25CS231",
+    "name": "Mr. Rahul V P",
+    "proctor": "Dr. Suhas A Bhyratae"
+  },
+  {
+    "usn": "1TD25CS263",
+    "name": "Mr. Sanchith J",
+    "proctor": "Prof. Syed Matheen Pasha"
+  },
+  {
+    "usn": "1TD25CS274",
+    "name": "Mr. Shivakumar Malagi",
+    "proctor": "Prof. Syed Matheen Pasha"
+  },
+  {
+    "usn": "1TD25CS293",
+    "name": "Ms. Sinchana P Reddy",
+    "proctor": "Prof. Syed Matheen Pasha"
+  },
+  {
+    "usn": "1TD25CS308",
+    "name": "Mr. Sundaram Shukla",
+    "proctor": "Prof. Syed Matheen Pasha",
+    "linkedin": "https://www.linkedin.com/in/sundaram-shukla-29b250287"
+  },
+  {
+    "usn": "1TD25CS321",
+    "name": "Mr. Trishar Jain",
+    "proctor": "Prof. Syed Matheen Pasha",
+    "linkedin": "https://www.linkedin.com/in/trishar-jain-6739293a0"
+  },
+  {
+    "usn": "1TD25CS322",
+    "name": "Mr. Udayshashi S R",
+    "proctor": "Prof. Syed Matheen Pasha"
+  },
+  {
+    "usn": "1TD25CS333",
+    "name": "Ms. Varnika Saxena",
+    "proctor": "Prof. Syed Matheen Pasha"
+  },
+  {
+    "usn": "1TE25CS007",
+    "name": "Mr. Abhay",
+    "proctor": "Prof. Yoga Durgadevi Goli"
+  },
+  {
+    "usn": "1TE25CS010",
+    "name": "Mr. Abhishek S",
+    "proctor": "Prof. Yoga Durgadevi Goli"
+  },
+  {
+    "usn": "1TE25CS018",
+    "name": "Mr. Aditya S",
+    "proctor": "Prof. Yoga Durgadevi Goli"
+  },
+  {
+    "usn": "1TE25CS033",
+    "name": "Ms. Ankitha Narayan",
+    "proctor": "Prof. Yoga Durgadevi Goli"
+  },
+  {
+    "usn": "1TE25CS063",
+    "name": "Ms. Bhoomika R",
+    "proctor": "Prof. Yoga Durgadevi Goli"
+  },
+  {
+    "usn": "1TE25CS086",
+    "name": "Mr. Chiranjeevi D V",
+    "proctor": "Prof. Yoga Durgadevi Goli"
+  },
+  {
+    "usn": "1TE25CS095",
+    "name": "Ms. Dhanyashree A P",
+    "proctor": "Prof. Yoga Durgadevi Goli"
+  },
+  {
+    "usn": "1TE25CS101",
+    "name": "Mr. Dwarakacherla Sasidhar Reddy",
+    "proctor": "Prof. Yoga Durgadevi Goli"
+  },
+  {
+    "usn": "1TE25CS130",
+    "name": "Ms. K Aishwarya Patil",
+    "proctor": "Dr. Suhas A Bhyratae"
+  },
+  {
+    "usn": "1TE25CS135",
+    "name": "Mr. Kamaleshwar Moolimani",
+    "proctor": "Dr. Suhas A Bhyratae"
+  },
+  {
+    "usn": "1TE25CS149",
+    "name": "Ms. Kusumitha B S",
+    "proctor": "Dr. Suhas A Bhyratae"
+  },
+  {
+    "usn": "1TE25CS214",
+    "name": "Mr. Rahul G",
+    "proctor": "Dr. Suhas A Bhyratae"
+  },
+  {
+    "usn": "1TE25CS238",
+    "name": "Ms. Roshni Barui",
+    "proctor": "Dr. Suhas A Bhyratae",
+    "linkedin": "https://www.linkedin.com/in/roshni-barui-546210382"
+  },
+  {
+    "usn": "1TE25CS247",
+    "name": "Ms. Sahana Shrishail Chikkalaki",
+    "proctor": "Dr. Suhas A Bhyratae"
+  },
+  {
+    "usn": "1TE25CS261",
+    "name": "Mr. Santosh",
+    "proctor": "Prof. Syed Matheen Pasha"
+  },
+  {
+    "usn": "1TE25CS262",
+    "name": "Ms. Savita Lakkappagol",
+    "proctor": "Prof. Syed Matheen Pasha"
+  },
+  {
+    "usn": "1TE25CS268",
+    "name": "Mr. Sharvesh B",
+    "proctor": "Prof. Syed Matheen Pasha"
+  },
+  {
+    "usn": "1TE25CS300",
+    "name": "Swapnal S Eralil",
+    "proctor": "Prof. Syed Matheen Pasha"
+  },
+  {
+    "usn": "1TE25CS320",
+    "name": "Ms. Usha",
+    "proctor": "Prof. Syed Matheen Pasha"
+  },
+  {
+    "usn": "1TE25CS345",
+    "name": "Ms. Yashika R",
+    "proctor": "Prof. Syed Matheen Pasha"
+  },
+  {
+    "usn": "1TE25CS346",
+    "name": "Mr. Yashir Akbar Pakali",
+    "proctor": "Prof. Syed Matheen Pasha"
+  }
+]
